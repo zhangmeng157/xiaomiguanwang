@@ -747,7 +747,7 @@ input{
 	z-index:999;
 	padding: 20px 0;
 }
-.banner_nav li{
+.banner_nav .label{
 	width: 174px;
 	height: 42px;
 	line-height: 42px;
@@ -803,7 +803,7 @@ input{
 	color: #fff;
 	cursor: pointer;
 }
-.banner_nav li:hover{
+.banner_nav .label:hover{
 	background-color: #ff6700;
 
 }
@@ -814,12 +814,11 @@ input{
 	color: #ff6700;
 	cursor: pointer;
 } */
-
 .reping{
-	width: 1226px;
-	height: 473px;
-	margin: 0 auto;
-	margin-top: 22px;
+    width: 1226px;
+    height: 473px;
+    margin: 0 auto;
+    margin-top: 22px;
 }
 .reping_beijing{
 	width: 1226px;
@@ -865,146 +864,177 @@ input{
 	margin-left: 0;
 }
 .neirong_beijing{
-	width: 1226px;
-	height: 420px;
+    width: 1226px;
+    height: 420px;
 }
 .neirong_item{
-	width: 296px;
-	height: 419px;
-	margin-left: 14px;
-	border-top: 1px solid #ffac13;
-	background-color:#FEFEFE;
-	float: left;
-	position: relative;
-	transition: all 0.3s linear;
+    width: 296px;
+    height: 419px;
+    margin-left: 14px;
+    border-top: 1px solid #ffac13;
+    background-color:#FEFEFE;
+    float: left;
+    position: relative;
+    transition: all 0.3s linear;
 }
 .neirong_item1{
-	margin-left: 0;
+    margin-left: 0;
 }
 .neirong_item2{
-	border-top: 1px solid #83c44e;
+    border-top: 1px solid #83c44e;
 }
 .neirong_item3{
-	border-top: 1px solid #e53935;
+    border-top: 1px solid #e53935;
 }
 .neirong_item4{
-	border-top: 1px solid #2196f3;
+    border-top: 1px solid #2196f3;
 }
 .neirong_item img{
-	width: 216px;
-	height: 154px;
-	margin-top: 0;
-	display: block;
+    width: 216px;
+    height: 154px;
+    margin-top: 0;
+    display: block;
 }
 .neirong_item p{
-	display: block;
-	width: 276px;
-	height: 24px;
-	margin: 50px 10px 18px 10px;
-	text-align: center;
-	line-height: 24px;
-	color: #ffac13; 
+    display: block;
+    width: 276px;
+    height: 24px;
+    margin: 50px 10px 18px 10px;
+    text-align: center;
+    line-height: 24px;
+    color: #ffac13;
 }
 .neirong_wenzi{
-	display: block;
-	height: 25px;
-	font-size: 20px;
-	text-align: center;
-	line-height: 25px;
-	color: #333; 
+    display: block;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 25px;
+    color: #333;
 }
 .neirong_wenzi1{
-	display: block;
-	width: 200px;
-	height: 40px;
-	font-size: 12px;
-	text-align: center;
-	color: #b0b0b0; 
-	margin: 0 auto;
-	margin-top: 12px;
-	margin-bottom: 20px;
+    display: block;
+    width: 200px;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #b0b0b0;
+    margin: 0 auto;
+    margin-top: 12px;
+    margin-bottom: 20px;
 }
 .neirong_wenzi2{
-	display: block;
-	width: 50px;
-	height: 16px;
-	font-size: 12px;
-	color: #333;
-	margin: 0 auto;
-	margin-bottom: 15px;
+    display: block;
+    width: 50px;
+    height: 16px;
+    font-size: 12px;
+    color: #333;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 .neirong_beijing .neirong_wenzi3{
-	color: #83c44e;
+    color: #83c44e;
 }
 .neirong_beijing .neirong_wenzi4{
-	color: #e53935;
+    color: #e53935;
 }
 .neirong_beijing .neirong_wenzi5{
-	color:#2196f3 ;
+    color:#2196f3 ;
 }
 .neirong_beijing img{
-	width: 216px;
-	height: 154px;
-	margin: 0 auto;
+    width: 216px;
+    height: 154px;
+    margin: 0 auto;
 }
 .neirong_btn{
-	width: 20px;
-	height: 48px;
-	font-weight: normal;
-	line-height: 48px;
-	text-align: center;
-	font-size: 20px;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	z-index: -1;
+    width: 20px;
+    height: 48px;
+    font-weight: normal;
+    line-height: 48px;
+    text-align: center;
+    font-size: 20px;
+    background: #757575;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    cursor: pointer;
+}
+.neirong_item:hover .neirong_btn{
+    opacity: 0.3;
+}
+.neirong_btn:hover{
+    opacity: 0.6!important;
 }
 .neirong_btn1{
-	left: 0;
+    left: 0;
 }
 .neirong_btn2{
-	right:0;
+    right:0;
 }
 
 .neirong_item5{
-	width: 296px;
-	height: 30px;
-	position: relative;
+    width: 296px;
+    height: 30px;
+    position: relative;
 }
+
 .neirong_item5_lunbo1{
-	width: 6px;
-	height: 6px;
-	background-color: white;
-	left: 100px;
-	top: 10px;
-	border-radius: 50%;
-	position: absolute;
-	border: 2px solid #ff6700;
-	margin-right: 15px;
-	cursor: pointer;
+    width: 6px;
+    height: 6px;
+    background-color:#b0b0b0;
+    left: 100px;
+    top: 10px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #f5f5f5;
+    margin-right: 15px;
+    cursor: pointer;
 
 }
 .neirong_item5_lunbo2{
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: #b0b0b0;
-	position: absolute;
-	top: 12px;
-	left: 145px;
-	cursor: pointer;
-
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+    position: absolute;
+    top: 10px;
+    left: 145px;
+    cursor: pointer;
+    border: 2px solid #f5f5f5;
 }
 .neirong_item5_lunbo3{
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: #b0b0b0;
-	position: absolute;
-	top: 12px;
-	left: 185px;
-	cursor: pointer;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+    position: absolute;
+    top: 10px;
+    left: 185px;
+    cursor: pointer;
+    border: 2px solid #f5f5f5;
+}
+.neirong-content{
+    width: 296px;
+    height:290px;
+    overflow:hidden;
+}
+.qiehuan{
+    width: 296px;
+    height:290px;
+    background: #fff;
+    float: left;
+}
+.neirong-inner{
+    width: 888px;
+    height: 290px;
+    transition: all 1s;
+}
+.neirong_item5 .active{
+    border:2px solid #ff6700;
+    background: #fff;
 }
 .shipin{
 	width: 1226px;
@@ -1134,6 +1164,7 @@ input{
 	width: 4000px;
 	height: 340px;
 	background-color: #fff;
+	transition: all 0.5s;
 }
 .danpin_btn1:hover,.danpin_btn2:hover{
 	color: #f60;
@@ -1156,7 +1187,51 @@ input{
 	position: absolute;
 	left: 0;
 	bottom: 0;
+	transition: all 0.5s;
 }
 .content-bottom .active{
 	z-index: 999;
+}
+.menu{
+    display: none;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    z-index: 24;
+    width: 795px;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+/* .banner_nav:hover .menu{
+	display: block;
+} */
+.menu1{
+	width: 265px;
+	height: 458px;
+	float: left;
+}
+.menu li{
+	position: relative;
+    float: left;
+    width: 265px;
+    height: 76px;
+}
+.label-a{
+	display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    transition: color .2s;
+}
+.label-a img{
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+}
+.label-a .text{
+	line-height: 40px;
 }

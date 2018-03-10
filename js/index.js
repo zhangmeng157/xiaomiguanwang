@@ -98,9 +98,6 @@
     function content(parent) {
         const types = parent.querySelectorAll(".dapei_right span");
         const goods = parent.querySelectorAll(".dapei-bottom");
-        console.log(types);
-        console.log(goods);
-
         types.forEach(function (ele, index) {
             ele.onmouseenter = function () {
                 for (let i = 0; i<types.length; i++) {
@@ -114,11 +111,72 @@
         })
     }
     const contentList = document.querySelectorAll(".dapei-content");
-    content(contentList[0]);
-    content(contentList[1]);
-    // content(contentList[2]);
-    // content(contentList[3]);
-    // contentlist.forEach(function (ele) {
-    //     content(ele);
-    // })
+    
+    contentList.forEach(function (ele) {
+        content(ele);
+    })
+}
+//内容部分效果
+{
+    function wheel(parent){
+        let prev=parent.querySelector(".neirong_btn1");
+        let next=parent.querySelector(".neirong_btn2");
+        let inner=parent.querySelector(".neirong-inner");
+        let contents=parent.querySelectorAll(".qiehuan");
+        let pagers=parent.querySelectorAll(".pager");
+        let n=0;
+        next.onclick=function () {
+            n++;
+            if(n===contents.length){
+                n=contents.length-1;
+                return;
+            }
+            inner.style.marginLeft=n* -296+"px";
+            pagers[n].classList.add("active");
+            pagers[n-1].classList.remove("active");
+            obj=pagers[n];
+        };
+        prev.onclick=function(){
+            n--;
+            if(n<0){
+                n=0;
+                return;
+            }
+            inner.style.marginLeft=n* -296+"px";
+            pagers[n].classList.add("active");
+            pagers[n+1].classList.remove("active");
+        };
+        let obj=pagers[n];
+        pagers.forEach(function (ele,index) {
+            ele.onclick=function () {
+                obj.classList.remove("active");
+                ele.classList.add("active");
+                obj=ele;
+                inner.style.marginLeft=index*-296+"px";
+                n=index;
+                
+            }
+        })
+    }
+    let items=document.querySelectorAll(".neirong_item");
+    items.forEach(function(ele){
+        wheel(ele);
+    })
+}
+
+//侧导航效果
+{
+    let labels=document.querySelectorAll(".label");
+    let menus=document.querySelectorAll(".menu");
+    let obj=menus[0];
+    labels.forEach(function(ele,index){
+        ele.onmouseenter=function(){
+            obj.style.display="none";
+            menus[index].style.display="block";
+            obj=menus[index];
+        }
+        ele.onmouseleave=function(){
+            menus[index].style.display="none";
+        }
+    })
 }
