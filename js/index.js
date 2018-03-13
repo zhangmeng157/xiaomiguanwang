@@ -33,7 +33,7 @@
         }
         imgs[n].classList.add("active");
         pagers[n].classList.add("active");
-    };
+    }
     let t=setInterval(move, 2000);
     banner.onmouseenter=function () {
         //清除自动
@@ -55,7 +55,7 @@
             n-=2;
             move();
         }
-    }
+    };
     imgs.forEach(function (ele) {
         ele.addEventListener("transitionend",function () {
             flag=true;
@@ -64,34 +64,40 @@
 }
 //单品部分效果
 {
-    const prev=document.querySelector(".danpin_btn1");
-    const next=document.querySelector(".danpin_btn2");
-    const inner=document.querySelector(".danpin_inner");
-    let n=0;
-    next.onclick=function(){
-        n++;
-        prev.classList.remove("disable")
-        if(n===2){
-            this.classList.add("disable");
+    function huadong(parent) {
+        const prev=parent.querySelector(".danpin_btn1");
+        const next=parent.querySelector(".danpin_btn2");
+        const inner=parent.querySelector(".danpin_inner");
+        let n=0;
+        next.onclick=function(){
+            n++;
+            prev.classList.remove("disable")
+            if(n===2){
+                this.classList.add("disable");
+            }
+            if(n===3){
+                n=2;
+                return;
+            }
+            inner.style.marginLeft=-1226*n+"px";
+        };
+        prev.onclick=function(){
+            n--;
+            next.classList.remove("disable");
+            if(n===0){
+                prev.classList.add("disable");
+            }
+            if(n===-1){
+                n=0;
+                return;
+            }
+            inner.style.marginLeft=-1226*n+"px";
         }
-        if(n===3){
-            n=2;
-            return;
-        }
-        inner.style.marginLeft=-1226*n+"px";
     }
-    prev.onclick=function(){
-        n--;
-        next.classList.remove("disable");
-        if(n===0){
-            prev.classList.add("disable");
-        }
-        if(n===-1){
-            n=0;
-            return;
-        }
-        inner.style.marginLeft=-1226*n+"px";
-    }
+    const huadongList=document.querySelectorAll(".huadong");
+    huadongList.forEach(function (ele) {
+        huadong(ele);
+    });
 }
 //选项卡
 {
@@ -145,6 +151,7 @@
             inner.style.marginLeft=n* -296+"px";
             pagers[n].classList.add("active");
             pagers[n+1].classList.remove("active");
+            obj=pagers[n];
         };
         let obj=pagers[n];
         pagers.forEach(function (ele,index) {
@@ -174,9 +181,46 @@
             obj.style.display="none";
             menus[index].style.display="block";
             obj=menus[index];
-        }
+        };
         ele.onmouseleave=function(){
             menus[index].style.display="none";
         }
     })
+}
+
+//导航效果
+// {
+//     let box=document.querySelector(".container-daohang");
+//     let top=document.querySelectorAll(".daohang_wenzi span");
+//     let bottom=document.querySelectorAll(".nav-menu");
+//     top.onmouseenter=function(){
+//         bottom.style.height="229px";
+//     }
+//     box.onmouseleave=function(){
+//         bottom.style.height="0";
+//     }
+// }
+
+{
+         let top=document.querySelectorAll(".daohang_wenzi span");
+         let neirong=document.querySelectorAll(".menu-content");
+         let bottom=document.querySelector(".nav-menu");
+         let box=document.querySelector(".container-daohang");
+         let object=bottom[0];
+         // console.log(top,bottom,box,neirong);
+         top.onmouseenter=function(){
+             bottom.style.display="block";
+             bottom.style.height="229px";
+         };
+        box.onmouseleave=function(){
+            bottom.style.display="none";
+            bottom.style.height="0";
+        };
+        top.forEach(function (ele,index) {
+            ele.onmouseenter=function () {
+                object.style.display="none";
+                neirong[index].style.display="block";
+                object=neirong[index];
+             }
+        });
 }

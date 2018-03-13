@@ -67,6 +67,20 @@
 	padding:0 10px;
 	cursor: pointer;
 }
+.daohang_wenzi p{
+	line-height: 100px;
+	color: #363636;
+	font-size: 15px;
+	float: left;
+	padding:0 10px;
+	cursor: pointer;
+}
+.daohang_wenzi p:hover{
+	color: #ff6700;
+}
+.daohang_wenzi span:hover{
+	color: #ff6700;
+}
 input{
 	width: 243px;
 	height: 48px;
@@ -82,6 +96,7 @@ input{
 	margin-top: -52px;
 	float: right;
 	cursor: pointer;
+	margin-left: 0px;
 }
 *{
 	padding: 0;
@@ -416,7 +431,6 @@ input{
 	margin: 0 16px;
 	margin-top: 22px;
 	cursor: pointer;
-	transition: all 0.5s;
 }
 /* .dapei_xuanzhong{
 	border-bottom: 2px solid #ff6700;
@@ -434,9 +448,10 @@ input{
 .tuijian {
 	margin-top: 22px;
 }
-.tuiian_bottom{
+.tuijian_bottom{
 	width: 1226px;
 	height: 300px;
+	overflow: hidden;
 }
 .tuijian_item1{
 	margin-left: 0;
@@ -796,9 +811,9 @@ input{
 	color: #ff6700;
 	cursor: pointer;
 }
-.daohang_wenzi span:hover{
+/* .daohang_wenzi span:hover{
 	color: #ff6700;
-}
+} */
 .banner_btn:hover{
 	color: #fff;
 	cursor: pointer;
@@ -1129,10 +1144,10 @@ input{
     background-color: #D9D9D9;
     background-position: 0px 50%;
 }
-.zhineng_btn:hover{
+.zhineng_more:hover .zhineng_btn{
 	background-color: #ff6700;
 }
-.zhineng_more h2:hover{
+.zhineng_more:hover h2{
 	color: #ff6700;	
 }
 .shipin_item a:hover{
@@ -1163,7 +1178,6 @@ input{
 .danpin_inner{
 	width: 4000px;
 	height: 340px;
-	background-color: #fff;
 	transition: all 0.5s;
 }
 .danpin_btn1:hover,.danpin_btn2:hover{
@@ -1172,7 +1186,7 @@ input{
 .danpin_btn .disable{
 	color: #e2e5e8;
 }
-.content-top .dapei_right.active{
+.dapei_right .active{
 	color: #f60;
 	border-bottom: 2px solid #ff6700;
 }
@@ -1206,17 +1220,12 @@ input{
     -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.18);
     box-shadow: 0 8px 16px rgba(0,0,0,0.18);
 }
-/* .banner_nav:hover .menu{
-	display: block;
-} */
 .menu1{
 	width: 265px;
 	height: 458px;
 	float: left;
 }
 .menu li{
-	position: relative;
-    float: left;
     width: 265px;
     height: 76px;
 }
@@ -1227,6 +1236,9 @@ input{
     color: #333;
     transition: color .2s;
 }
+.label-a:hover{
+	color: #ff6700;
+}
 .label-a img{
     margin-right: 12px;
     width: 40px;
@@ -1234,4 +1246,66 @@ input{
 }
 .label-a .text{
 	line-height: 40px;
+}
+.container-daohang{
+	width: 100%;
+	/*height: 100px;*/
+	position: relative;
+	z-index: 9999;
+}
+.nav-menu{
+	width: 100%;
+	height: 229px;
+	background-color: #fff;
+	position: absolute;
+	top: 100px;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+	display: none;
+}
+.menu-content{
+	width: 1226px;
+	height: 229px;
+	position: absolute;
+	left: 61px;
+	top: 0;
+}
+.menu-text{
+	position: relative;
+	width: 180px;
+	padding: 35px 12px 0;
+	float: left;
+	background-color: #fff;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+}
+.menu-item{
+	border: 1px solid #ff6700;
+	font-size: 12px;
+	color: #ff6700;
+	line-height:20px; 
+	position: absolute;
+	top: 0;
+	left:64px;
+	padding: 0 20px;
+}
+.menu-pic{
+    width: 160px;
+    height: 110px;
+    margin: 0 auto 16px;
+    border-right: 1px solid #eee;
+}
+.menu-text .menu-pic1{
+	border-right: 0;
+}
+.menu-pic img{
+	width: 160px;
+	height: 110px;
+}
+.menu-text span{
+	color: #ff6700;
+}
+.active1{
+	z-index: 999;
 }
