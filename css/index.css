@@ -1270,9 +1270,7 @@ input{
 .menu-content{
 	width: 1226px;
 	height: 229px;
-	position: absolute;
-	left: 61px;
-	top: 0;
+	margin:0 auto;
 }
 .menu-text{
 	position: relative;
