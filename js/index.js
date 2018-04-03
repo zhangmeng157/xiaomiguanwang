@@ -20,7 +20,6 @@
     var n = 0;
     function move() {
         n++;
-        // n=n%5;
         if (n === imgs.length) {
             n = 0;
         }//判断超出范围
@@ -131,6 +130,7 @@
         let contents=parent.querySelectorAll(".qiehuan");
         let pagers=parent.querySelectorAll(".pager");
         let n=0;
+        let obj=pagers[n];
         next.onclick=function () {
             n++;
             if(n===contents.length){
@@ -153,7 +153,6 @@
             pagers[n+1].classList.remove("active");
             obj=pagers[n];
         };
-        let obj=pagers[n];
         pagers.forEach(function (ele,index) {
             ele.onclick=function () {
                 obj.classList.remove("active");
@@ -203,24 +202,24 @@
 
 {
          let top=document.querySelectorAll(".daohang_wenzi span");
-         let neirong=document.querySelectorAll(".menu-content");
-         let bottom=document.querySelector(".nav-menu");
-         let box=document.querySelector(".container-daohang");
-         let object=bottom[0];
-         // console.log(top,bottom,box,neirong);
-         top.onmouseenter=function(){
-             bottom.style.display="block";
-             bottom.style.height="229px";
-         };
-        box.onmouseleave=function(){
-            bottom.style.display="none";
-            bottom.style.height="0";
-        };
+         // let neirong=document.querySelectorAll(".menu-content");
+         let bottom=document.querySelectorAll(".nav-menu");
+         let box=document.querySelector(".daohang");
+         let obj=bottom[0];
+        //  top.onmouseenter=function(){
+        //      bottom.style.display="block";
+        //  };
+        // box.onmouseleave=function(){
+        //     bottom.style.display="none";
+        // };
         top.forEach(function (ele,index) {
             ele.onmouseenter=function () {
-                object.style.display="none";
-                neirong[index].style.display="block";
-                object=neirong[index];
-             }
+                obj.style.display="none";
+                bottom[index].style.display="block";
+                obj=bottom[index];
+             };
+            ele.onmouseleave=function () {
+                bottom[index].style.display="none";
+            }
         });
 }
